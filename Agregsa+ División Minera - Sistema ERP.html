@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<!-- saved from url=(0127)https://gensparkpublicblob.blob.core.windows.net/user-upload-image/page/toolu_01HK3afQsE1oXuAq6fYq4d3E/agregsa_erp_offline.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregsa+ División Minera - Sistema ERP</title>
+    <link href="./Agregsa+ División Minera - Sistema ERP_files/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Agregsa+ División Minera - Sistema ERP_files/all.min.css">
+    <script src="./Agregsa+ División Minera - Sistema ERP_files/chart.js.descarga"></script>
+    <style>
+        .form-section {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: white;
+        }
+        .products-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .products-table th, .products-table td {
+            border: 1px solid #d1d5db;
+            padding: 8px;
+            text-align: left;
+        }
+        .products-table th {
+            background-color: #f9fafb;
+            font-weight: bold;
+        }
+        .nav-tab {
+            transition: all 0.3s ease;
+        }
+        .nav-tab.active {
+            background-color: #0066cc;
+            color: white;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo-image {
+            height: 50px;
+            width: auto;
+        }
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem;
+            border-radius: 8px;
+            z-index: 1000;
+            display: none;
+        }
+        .notification.success {
+            background-color: #10b981;
+            color: white;
+        }
+        .notification.error {
+            background-color: #ef4444;
+            color: white;
+        }
+    </style>
+<style>
+    .genspark-notice-dialog {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 10001;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .genspark-notice-content {
+      background-color: white;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 90%;
+      box-sizing: border-box;
+      padding: 10px 30px 30px 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+    }
+
+    .genspark-notice-title {
+      color: #000;
+      font-family: Arial;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; 
+    }
+
+    .genspark-notice-list {
+      margin: 24px 0;
+      
+      color: #606366;
+      font-family: Arial;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      padding-left: 12px;
+    }
+
+    .genspark-notice-list li {
+      margin-bottom: 12px;
+      list-style-type: disc;
+    }
+
+    .genspark-notice-list li a {
+      color: #606366;
+      text-decoration: underline;
+    }
+
+    .genspark-notice-checkbox {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      gap: 10px;
+
+      color: #232425;
+
+      font-family: Arial;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .genspark-notice-actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+      
+    .genspark-notice-ok {
+      color: #232425;
+
+      text-align: center;
+      font-family: Arial;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; 
+
+      cursor: pointer;
+      display: flex;
+      height: 40px;
+      padding: 6px 14px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      align-self: stretch;
+      border-radius: 8px;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      width: 100%;
+    }
+  </style><meta id="acfifjfajpekbmhmjppnmmjgmhjkildl"><meta id="dcngeagmmhegagicpcmpinaoklddcgon"></head>
+<body class="bg-gray-50">
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <span id="notificationText"></span>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="logo-container">
+                    <img src="./Agregsa+ División Minera - Sistema ERP_files/36b827f2-5e44-494b-990c-869ef84b289b" alt="Agregsa+ División Minera" class="logo-image">
+                </div>
+                <div class="text-right">
+                    <h2 class="text-xl font-bold text-gray-800">ORDEN DE PEDIDO</h2>
+                    <p class="text-sm text-gray-500" id="currentDate">23/7/2025</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex space-x-8">
+                <button onclick="showSection(&#39;pedidos&#39;)" class="nav-tab px-4 py-3 text-sm font-medium rounded-t-lg text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-plus-circle mr-2"></i>Nuevo Pedido
+                </button>
+                <button onclick="showSection(&#39;dashboard&#39;)" class="nav-tab px-4 py-3 text-sm font-medium rounded-t-lg text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-chart-dashboard mr-2"></i>Dashboard
+                </button>
+                <button onclick="showSection(&#39;lista&#39;)" class="nav-tab px-4 py-3 text-sm font-medium rounded-t-lg text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-list mr-2"></i>Lista Pedidos
+                </button>
+                <button onclick="showSection(&#39;config&#39;)" class="nav-tab px-4 py-3 text-sm font-medium rounded-t-lg text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-cog mr-2"></i>Configuración
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        
+        <!-- Sección de Configuración -->
+        <div id="section-config" class="hidden">
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-lg font-bold mb-4">Configuración del Sistema</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Prefijo de Numeración</label>
+                        <input type="text" id="orderPrefix" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="AGR" value="AGR">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Siguiente Número de Orden</label>
+                        <input type="number" id="nextOrderNumber" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="1" min="1">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Empresa</label>
+                        <input type="text" id="companyName" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="Agregsa+ División Minera" value="Agregsa+ División Minera">
+                    </div>
+                    <div class="flex space-x-4">
+                        <button onclick="saveConfig()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                            <i class="fas fa-save mr-2"></i>Guardar Configuración
+                        </button>
+                        <button onclick="exportData()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                            <i class="fas fa-download mr-2"></i>Exportar Datos
+                        </button>
+                        <button onclick="importData()" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
+                            <i class="fas fa-upload mr-2"></i>Importar Datos
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-green-50 rounded-lg">
+                    <h4 class="font-bold text-green-800 mb-2">Sistema Offline:</h4>
+                    <ul class="text-sm text-green-700 space-y-1">
+                        <li>✅ Funciona sin conexión a internet</li>
+                        <li>✅ Datos guardados localmente en el navegador</li>
+                        <li>✅ Sincronización automática entre pestañas</li>
+                        <li>✅ Respaldo de datos disponible</li>
+                        <li>✅ Acceso desde cualquier dispositivo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Pedidos -->
+        <div id="section-pedidos" class="">
+            <form id="pedidoForm" class="space-y-6">
+                <!-- Cabecera del Pedido -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="form-section">
+                        <label class="block text-sm font-bold text-gray-700 mb-2">FECHA</label>
+                        <input type="date" id="fecha" class="w-full px-3 py-2 border border-gray-300 rounded-md" required="">
+                    </div>
+                    <div class="form-section">
+                        <label class="block text-sm font-bold text-gray-700 mb-2">ORDEN No.</label>
+                        <input type="text" id="ordenNo" class="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-100" readonly="">
+                    </div>
+                    <div class="form-section">
+                        <label class="block text-sm font-bold text-gray-700 mb-2">CLIENTE No.</label>
+                        <input type="text" id="clienteNo" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                    </div>
+                </div>
+
+                <!-- Datos del Cliente -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="form-section">
+                        <h3 class="text-sm font-bold text-gray-700 mb-3">CLIENTE</h3>
+                        <div class="space-y-3">
+                            <input type="text" id="clienteNombre" placeholder="Nombre de la empresa" class="w-full px-3 py-2 border-b border-gray-300 bg-transparent" required="">
+                            <input type="text" id="clienteDireccion" placeholder="Dirección" class="w-full px-3 py-2 border-b border-gray-300 bg-transparent">
+                            <input type="tel" id="clienteTelefono" placeholder="Teléfono" class="w-full px-3 py-2 border-b border-gray-300 bg-transparent">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="text-sm font-bold text-gray-700 mb-3">ENVIAR A</h3>
+                        <div class="space-y-3">
+                            <input type="text" id="enviarNombre" placeholder="Nombre de la empresa" class="w-full px-3 py-2 border-b border-gray-300 bg-transparent">
+                            <input type="text" id="enviarDireccion" placeholder="Dirección" class="w-full px-3 py-2 border-b border-gray-300 bg-transparent">
+                            <input type="tel" id="enviarTelefono" placeholder="Teléfono" class="w-full px-3 py-2 border-b border-gray-300 bg-transparent">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detalles del Pedido -->
+                <div class="form-section">
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">MÉTODO DE RETIRO</label>
+                            <input type="text" id="metodoRetiro" class="w-full px-2 py-1 border-b border-gray-300 bg-transparent text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">CONDICIONES</label>
+                            <input type="text" id="condiciones" class="w-full px-2 py-1 border-b border-gray-300 bg-transparent text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">ENVIAR VÍA</label>
+                            <input type="text" id="enviarVia" class="w-full px-2 py-1 border-b border-gray-300 bg-transparent text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">PAGO</label>
+                            <input type="text" id="pago" class="w-full px-2 py-1 border-b border-gray-300 bg-transparent text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">FECHA DE ENTREGA</label>
+                            <input type="date" id="fechaEntrega" class="w-full px-2 py-1 border-b border-gray-300 bg-transparent text-sm">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabla de Productos -->
+                <div class="form-section">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-sm font-bold text-gray-700">PRODUCTOS</h3>
+                        <button type="button" onclick="addProductRow()" class="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700">
+                            <i class="fas fa-plus mr-1"></i>Agregar Producto
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="products-table">
+                            <thead>
+                                <tr>
+                                    <th class="w-20">ARTICULO No.</th>
+                                    <th>DESCRIPCIÓN</th>
+                                    <th class="w-24">CANTIDAD</th>
+                                    <th class="w-32">PRECIO</th>
+                                    <th class="w-32">TOTAL</th>
+                                    <th class="w-16">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productosTable">
+                                <tr>
+                                    <td><input type="text" class="w-full px-2 py-1 border-0 bg-transparent producto-codigo"></td>
+                                    <td><input type="text" class="w-full px-2 py-1 border-0 bg-transparent producto-descripcion"></td>
+                                    <td><input type="number" class="w-full px-2 py-1 border-0 bg-transparent producto-cantidad" onchange="calculateRowTotal(this)"></td>
+                                    <td><input type="number" step="0.01" class="w-full px-2 py-1 border-0 bg-transparent producto-precio" onchange="calculateRowTotal(this)"></td>
+                                    <td><input type="number" step="0.01" class="w-full px-2 py-1 border-0 bg-transparent producto-total" readonly=""></td>
+                                    <td><button type="button" onclick="removeProductRow(this)" class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Totales y Observaciones -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="form-section">
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Observaciones/Instrucciones</label>
+                        <textarea id="observaciones" rows="6" class="w-full px-3 py-2 border border-gray-300 rounded-md"></textarea>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold">SUBTOTAL</span>
+                                <input type="number" step="0.01" id="subtotal" class="w-32 px-3 py-1 border-b border-gray-300 text-right" readonly="">
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold">DESCUENTO</span>
+                                <input type="number" step="0.01" id="descuento" class="w-32 px-3 py-1 border-b border-gray-300 text-right" onchange="calculateTotal()">
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold">OTROS</span>
+                                <input type="number" step="0.01" id="otros" class="w-32 px-3 py-1 border-b border-gray-300 text-right" onchange="calculateTotal()">
+                            </div>
+                            <div class="flex justify-between items-center border-t pt-2">
+                                <span class="font-bold text-lg">TOTAL</span>
+                                <input type="number" step="0.01" id="total" class="w-32 px-3 py-1 border-2 border-gray-400 text-right font-bold text-lg" readonly="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Firma -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="form-section">
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Firma Autorizada</label>
+                        <input type="text" id="firmaAutorizada" class="w-full px-3 py-2 border-b border-gray-300 bg-transparent">
+                    </div>
+                    <div class="form-section">
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Fecha</label>
+                        <input type="date" id="fechaFirma" class="w-full px-3 py-2 border-b border-gray-300 bg-transparent">
+                    </div>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="flex justify-center space-x-4 pt-6">
+                    <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700">
+                        <i class="fas fa-save mr-2"></i>Guardar Pedido
+                    </button>
+                    <button type="button" onclick="clearForm()" class="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600">
+                        <i class="fas fa-eraser mr-2"></i>Limpiar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Sección Dashboard -->
+        <div id="section-dashboard" class="hidden">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                            <i class="fas fa-shopping-cart text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-gray-500 text-sm">Total Pedidos</p>
+                            <p class="text-2xl font-bold" id="totalPedidos">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-green-100 text-green-600">
+                            <i class="fas fa-dollar-sign text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-gray-500 text-sm">Facturación Total</p>
+                            <p class="text-2xl font-bold" id="totalFacturacion">₲ 0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-purple-100 text-purple-600">
+                            <i class="fas fa-calendar-day text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-gray-500 text-sm">Pedidos Hoy</p>
+                            <p class="text-2xl font-bold" id="pedidosHoy">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-gray-500 text-sm">Promedio/Pedido</p>
+                            <p class="text-2xl font-bold" id="promedioFacturacion">₲ 0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-bold mb-4">Pedidos por Mes</h3>
+                    <div style="height: 300px;">
+                        <canvas id="pedidosChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-bold mb-4">Facturación por Mes</h3>
+                    <div style="height: 300px;">
+                        <canvas id="facturacionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Lista -->
+        <div id="section-lista" class="hidden">
+            <div class="bg-white rounded-lg shadow">
+                <div class="p-6 border-b">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-bold">Lista de Pedidos</h3>
+                        <div class="flex space-x-2">
+                            <input type="text" id="searchInput" placeholder="Buscar pedidos..." class="px-3 py-2 border border-gray-300 rounded">
+                            <button onclick="refreshData()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                <i class="fas fa-sync mr-2"></i>Actualizar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Orden No.</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Fecha</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Cliente</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Total</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Estado</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pedidosList" class="bg-white divide-y divide-gray-200">
+                            <!-- Los datos se cargarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center">
+                <i class="fas fa-spinner fa-spin text-blue-600 text-xl mr-3"></i>
+                <span>Procesando...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden file input for import -->
+    <input type="file" id="fileInput" accept=".json" style="display: none;">
+
+    <script>
+        // Variables globales
+        let config = {
+            orderPrefix: 'AGR',
+            nextOrderNumber: 1,
+            companyName: 'Agregsa+ División Minera'
+        };
+        let pedidosData = [];
+        let currentChart = null;
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            loadConfig();
+            loadPedidos();
+            setCurrentDate();
+            generateOrderNumber();
+            calculateTotal();
+            showSection('pedidos');
+            setupEventListeners();
+        });
+
+        // Event Listeners
+        function setupEventListeners() {
+            // Búsqueda en tiempo real
+            document.getElementById('searchInput').addEventListener('input', function(e) {
+                filterPedidos(e.target.value);
+            });
+
+            // File input para importar
+            document.getElementById('fileInput').addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        try {
+                            const data = JSON.parse(e.target.result);
+                            localStorage.setItem('agregsa_pedidos', JSON.stringify(data.pedidos || []));
+                            localStorage.setItem('agregsa_config', JSON.stringify(data.config || config));
+                            loadPedidos();
+                            loadConfig();
+                            showNotification('Datos importados exitosamente', 'success');
+                        } catch (error) {
+                            showNotification('Error al importar datos', 'error');
+                        }
+                    };
+                    reader.readAsText(file);
+                }
+            });
+        }
+
+        // Configuración
+        function loadConfig() {
+            const savedConfig = localStorage.getItem('agregsa_config');
+            if (savedConfig) {
+                config = { ...config, ...JSON.parse(savedConfig) };
+            }
+            document.getElementById('orderPrefix').value = config.orderPrefix;
+            document.getElementById('nextOrderNumber').value = config.nextOrderNumber;
+            document.getElementById('companyName').value = config.companyName;
+        }
+
+        function saveConfig() {
+            config.orderPrefix = document.getElementById('orderPrefix').value;
+            config.nextOrderNumber = parseInt(document.getElementById('nextOrderNumber').value);
+            config.companyName = document.getElementById('companyName').value;
+            localStorage.setItem('agregsa_config', JSON.stringify(config));
+            generateOrderNumber();
+            showNotification('Configuración guardada exitosamente', 'success');
+        }
+
+        function exportData() {
+            const exportData = {
+                pedidos: pedidosData,
+                config: config,
+                exportDate: new Date().toISOString()
+            };
+            const dataStr = JSON.stringify(exportData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `agregsa_backup_${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+        }
+
+        function importData() {
+            document.getElementById('fileInput').click();
+        }
+
+        // Cargar pedidos
+        function loadPedidos() {
+            const savedPedidos = localStorage.getItem('agregsa_pedidos');
+            if (savedPedidos) {
+                pedidosData = JSON.parse(savedPedidos);
+            }
+        }
+
+        // Navegación
+        function showSection(sectionName) {
+            const sections = ['pedidos', 'dashboard', 'lista', 'config'];
+            sections.forEach(section => {
+                document.getElementById(`section-${section}`).classList.add('hidden');
+            });
+            
+            document.getElementById(`section-${sectionName}`).classList.remove('hidden');
+            
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+                tab.classList.add('text-gray-500', 'hover:text-gray-700');
+            });
+            
+            event.target.classList.add('active');
+            event.target.classList.remove('text-gray-500', 'hover:text-gray-700');
+            
+            if (sectionName === 'dashboard') {
+                loadDashboardData();
+            } else if (sectionName === 'lista') {
+                loadPedidosList();
+            } else if (sectionName === 'config') {
+                loadConfig();
+            }
+        }
+
+        // Funciones de fecha y numeración
+        function setCurrentDate() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('fecha').value = today;
+            document.getElementById('fechaFirma').value = today;
+            document.getElementById('currentDate').textContent = new Date().toLocaleDateString('es-ES');
+        }
+
+        function generateOrderNumber() {
+            const orderNumber = `${config.orderPrefix}-${config.nextOrderNumber.toString().padStart(4, '0')}`;
+            document.getElementById('ordenNo').value = orderNumber;
+        }
+
+        // Funciones de productos
+        function addProductRow() {
+            const tbody = document.getElementById('productosTable');
+            const newRow = tbody.insertRow();
+            newRow.innerHTML = `
+                <td><input type="text" class="w-full px-2 py-1 border-0 bg-transparent producto-codigo"></td>
+                <td><input type="text" class="w-full px-2 py-1 border-0 bg-transparent producto-descripcion"></td>
+                <td><input type="number" class="w-full px-2 py-1 border-0 bg-transparent producto-cantidad" onchange="calculateRowTotal(this)"></td>
+                <td><input type="number" step="0.01" class="w-full px-2 py-1 border-0 bg-transparent producto-precio" onchange="calculateRowTotal(this)"></td>
+                <td><input type="number" step="0.01" class="w-full px-2 py-1 border-0 bg-transparent producto-total" readonly></td>
+                <td><button type="button" onclick="removeProductRow(this)" class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button></td>
+            `;
+        }
+
+        function removeProductRow(button) {
+            button.closest('tr').remove();
+            calculateSubtotal();
+        }
+
+        function calculateRowTotal(input) {
+            const row = input.closest('tr');
+            const cantidad = parseFloat(row.querySelector('.producto-cantidad').value) || 0;
+            const precio = parseFloat(row.querySelector('.producto-precio').value) || 0;
+            const total = cantidad * precio;
+            row.querySelector('.producto-total').value = total.toFixed(2);
+            calculateSubtotal();
+        }
+
+        function calculateSubtotal() {
+            const totals = document.querySelectorAll('.producto-total');
+            let subtotal = 0;
+            totals.forEach(input => {
+                subtotal += parseFloat(input.value) || 0;
+            });
+            document.getElementById('subtotal').value = subtotal.toFixed(2);
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            const subtotal = parseFloat(document.getElementById('subtotal').value) || 0;
+            const descuento = parseFloat(document.getElementById('descuento').value) || 0;
+            const otros = parseFloat(document.getElementById('otros').value) || 0;
+            const total = subtotal - descuento + otros;
+            document.getElementById('total').value = total.toFixed(2);
+        }
+
+        // Envío de datos
+        document.getElementById('pedidoForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            document.getElementById('loadingOverlay').classList.remove('hidden');
+            
+            try {
+                const pedidoData = collectFormData();
+                pedidosData.push(pedidoData);
+                localStorage.setItem('agregsa_pedidos', JSON.stringify(pedidosData));
+                
+                config.nextOrderNumber++;
+                localStorage.setItem('agregsa_config', JSON.stringify(config));
+                
+                clearForm();
+                generateOrderNumber();
+                
+                showNotification('✅ Pedido guardado exitosamente', 'success');
+                
+            } catch (error) {
+                console.error('Error:', error);
+                showNotification('❌ Error al guardar el pedido', 'error');
+            } finally {
+                document.getElementById('loadingOverlay').classList.add('hidden');
+            }
+        });
+
+        function collectFormData() {
+            const productos = [];
+            const rows = document.querySelectorAll('#productosTable tr');
+            rows.forEach(row => {
+                const codigo = row.querySelector('.producto-codigo')?.value;
+                const descripcion = row.querySelector('.producto-descripcion')?.value;
+                const cantidad = row.querySelector('.producto-cantidad')?.value;
+                const precio = row.querySelector('.producto-precio')?.value;
+                const total = row.querySelector('.producto-total')?.value;
+                
+                if (codigo || descripcion) {
+                    productos.push({ codigo, descripcion, cantidad, precio, total });
+                }
+            });
+
+            return {
+                id: Date.now(),
+                fecha: document.getElementById('fecha').value,
+                ordenNo: document.getElementById('ordenNo').value,
+                clienteNo: document.getElementById('clienteNo').value,
+                clienteNombre: document.getElementById('clienteNombre').value,
+                clienteDireccion: document.getElementById('clienteDireccion').value,
+                clienteTelefono: document.getElementById('clienteTelefono').value,
+                enviarNombre: document.getElementById('enviarNombre').value,
+                enviarDireccion: document.getElementById('enviarDireccion').value,
+                enviarTelefono: document.getElementById('enviarTelefono').value,
+                metodoRetiro: document.getElementById('metodoRetiro').value,
+                condiciones: document.getElementById('condiciones').value,
+                enviarVia: document.getElementById('enviarVia').value,
+                pago: document.getElementById('pago').value,
+                fechaEntrega: document.getElementById('fechaEntrega').value,
+                productos: productos,
+                subtotal: document.getElementById('subtotal').value,
+                descuento: document.getElementById('descuento').value,
+                otros: document.getElementById('otros').value,
+                total: document.getElementById('total').value,
+                observaciones: document.getElementById('observaciones').value,
+                firmaAutorizada: document.getElementById('firmaAutorizada').value,
+                fechaFirma: document.getElementById('fechaFirma').value,
+                timestamp: new Date().toISOString(),
+                estado: 'Completado'
+            };
+        }
+
+        function clearForm() {
+            document.getElementById('pedidoForm').reset();
+            setCurrentDate();
+            
+            const tbody = document.getElementById('productosTable');
+            while (tbody.rows.length > 1) {
+                tbody.deleteRow(1);
+            }
+            
+            const firstRow = tbody.rows[0];
+            firstRow.querySelectorAll('input').forEach(input => input.value = '');
+            
+            calculateTotal();
+        }
+
+        // Dashboard functions
+        function loadDashboardData() {
+            loadPedidos();
+            
+            document.getElementById('totalPedidos').textContent = pedidosData.length;
+            
+            const totalFacturacion = pedidosData.reduce((sum, pedido) => sum + (parseFloat(pedido.total) || 0), 0);
+            document.getElementById('totalFacturacion').textContent = `₲ ${totalFacturacion.toLocaleString()}`;
+            
+            const today = new Date().toISOString().split('T')[0];
+            const pedidosHoy = pedidosData.filter(pedido => pedido.fecha === today).length;
+            document.getElementById('pedidosHoy').textContent = pedidosHoy;
+            
+            const promedio = pedidosData.length > 0 ? totalFacturacion / pedidosData.length : 0;
+            document.getElementById('promedioFacturacion').textContent = `₲ ${promedio.toLocaleString()}`;
+            
+            createCharts(pedidosData);
+        }
+
+        function createCharts(data) {
+            // Datos por mes
+            const monthlyData = {};
+            const monthlyRevenue = {};
+            
+            data.forEach(pedido => {
+                if (pedido.fecha) {
+                    const month = pedido.fecha.substring(0, 7); // YYYY-MM
+                    monthlyData[month] = (monthlyData[month] || 0) + 1;
+                    monthlyRevenue[month] = (monthlyRevenue[month] || 0) + (parseFloat(pedido.total) || 0);
+                }
+            });
+            
+            const labels = Object.keys(monthlyData).sort();
+            const pedidosValues = labels.map(month => monthlyData[month] || 0);
+            const revenueValues = labels.map(month => monthlyRevenue[month] || 0);
+            
+            // Gráfico de pedidos
+            const ctx1 = document.getElementById('pedidosChart').getContext('2d');
+            if (currentChart) currentChart.destroy();
+            
+            new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Pedidos por Mes',
+                        data: pedidosValues,
+                        backgroundColor: 'rgba(59, 130, 246, 0.8)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Gráfico de facturación
+            const ctx2 = document.getElementById('facturacionChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Facturación por Mes (₲)',
+                        data: revenueValues,
+                        backgroundColor: 'rgba(16, 185, 129, 0.2)',
+                        borderColor: 'rgba(16, 185, 129, 1)',
+                        borderWidth: 2,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function loadPedidosList() {
+            loadPedidos();
+            displayPedidos(pedidosData);
+        }
+
+        function displayPedidos(data) {
+            const tbody = document.getElementById('pedidosList');
+            tbody.innerHTML = '';
+            
+            data.forEach(pedido => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${pedido.ordenNo}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${pedido.fecha}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${pedido.clienteNombre}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">₲ ${parseFloat(pedido.total || 0).toLocaleString()}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                            ${pedido.estado || 'Completado'}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <button onclick="viewPedido(${pedido.id})" class="text-blue-600 hover:text-blue-900 mr-2">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button onclick="deletePedido(${pedido.id})" class="text-red-600 hover:text-red-900">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+            });
+        }
+
+        function filterPedidos(query) {
+            const filtered = pedidosData.filter(pedido => 
+                pedido.ordenNo.toLowerCase().includes(query.toLowerCase()) ||
+                pedido.clienteNombre.toLowerCase().includes(query.toLowerCase()) ||
+                pedido.fecha.includes(query)
+            );
+            displayPedidos(filtered);
+        }
+
+        function viewPedido(id) {
+            const pedido = pedidosData.find(p => p.id === id);
+            if (pedido) {
+                alert(`Detalles del Pedido:\n\nOrden: ${pedido.ordenNo}\nCliente: ${pedido.clienteNombre}\nFecha: ${pedido.fecha}\nTotal: ₲ ${parseFloat(pedido.total || 0).toLocaleString()}\n\nObservaciones: ${pedido.observaciones || 'Ninguna'}`);
+            }
+        }
+
+        function deletePedido(id) {
+            if (confirm('¿Está seguro de eliminar este pedido?')) {
+                pedidosData = pedidosData.filter(p => p.id !== id);
+                localStorage.setItem('agregsa_pedidos', JSON.stringify(pedidosData));
+                loadPedidosList();
+                showNotification('Pedido eliminado exitosamente', 'success');
+            }
+        }
+
+        function refreshData() {
+            loadPedidos();
+            loadPedidosList();
+            showNotification('Datos actualizados', 'success');
+        }
+
+        // Notificaciones
+        function showNotification(message, type) {
+            const notification = document.getElementById('notification');
+            const notificationText = document.getElementById('notificationText');
+            
+            notificationText.textContent = message;
+            notification.className = `notification ${type}`;
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        // Prevenir pérdida de datos
+        window.addEventListener('beforeunload', function(e) {
+            const hasUnsavedData = document.getElementById('clienteNombre').value.trim() !== '';
+            if (hasUnsavedData) {
+                e.preventDefault();
+                e.returnValue = '¿Seguro que desea salir? Los cambios no guardados se perderán.';
+            }
+        });
+    </script>
+
+
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDkZJzdBolSqNZWHJ41WB4vXwgo6zI5MIVXJCOmjT0XVoSvKlFn3FX1kLz5zwR0kWz4hW8q4HKazmJtHM%2Bo94bOCGpclfpaCSukzs%2B7YEi0BNhCD8S541Q%2FRkxgWQPS7gHn%2FCoyBi3GG%2Bc0IJrMubz3w1HTB9xq4Jo7AylV%2B9%2FNCJQ8eqVBcuVc2BnE217G%2FixbYlcliCIR9wKGlAPR4SonrzE5QzY%2BamlmPczKnRezMNgN5CRjpW6RiAAHt05vZ9Uou%2FHeXu%2BDXZKjFz0F%2FcFZEAuNmQTXjY3UxGfxky6kXKb%2F0KN%2Fq9FHI2vChCbs5%2F79W8B1xZEPwn2LRybu43NyAKNEa2AstMXhdyjxgnBfBPelrFIPXkMIDCnb0GeQb4MznvZvEx1owTHwz1iNbmjcSTTPsPu88z954QWY9WZ6mPWqWiTEyoyEPoPsviMkESkkCLKyouqPGCOH%2FHvTek1LMsVfeLbEOkBRZZsWxAPIjiWd5kKaEoKaXDOsNvsNc5Pg%3D%3D";
+        window.__genspark_locale = "pt-BR";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDkZJzdBolSqNZWHJ41WB4vXwgo6zI5MIVXJCOmjT0XVoSvKlFn3FX1kLz5zwR0kWz4hW8q4HKazmJtHM+o94bOCGpclfpaCSukzs+7YEi0BNhCD8S541Q/RkxgWQPS7gHn/CoyBi3GG+c0IJrMubz3w1HTB9xq4Jo7AylV+9/NCJQ8eqVBcuVc2BnE217G/ixbYlcliCIR9wKGlAPR4SonrzE5QzY+amlmPczKnRezMNgN5CRjpW6RiAAHt05vZ9Uou/HeXu+DXZKjFz0F/cFZEAuNmQTXjY3UxGfxky6kXKb/0KN/q9FHI2vChCbs5/79W8B1xZEPwn2LRybu43NyAKNEa2AstMXhdyjxgnBfBPelrFIPXkMIDCnb0GeQb4MznvZvEx1owTHwz1iNbmjcSTTPsPu88z954QWY9WZ6mPWqWiTEyoyEPoPsviMkESkkCLKyouqPGCOH/HvTek1LMsVfeLbEOkBRZZsWxAPIjiWd5kKaEoKaXDOsNvsNc5Pg==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="./Agregsa+ División Minera - Sistema ERP_files/notice_dialog.js.descarga"></script>
+    <div id="my-app"></div></body></html>
